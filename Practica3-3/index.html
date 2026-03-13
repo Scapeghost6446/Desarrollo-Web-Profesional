@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Proyecto Web - Demostración</title>
+
+<!--
+Se importa la hoja de estilos principal.
+Se decidió separar CSS para mantener el código organizado
+y permitir reutilización en otros componentes.
+-->
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h1 id="titulo">Demostración de Componentes Web</h1>
+
+<p>Proyecto de manipulación del DOM, consumo de APIs y componentes UI</p>
+
+</header>
+
+
+<!-- ===============================
+CARRUSEL
+================================ -->
+
+<section>
+
+<h2>Carrusel</h2>
+
+<div class="mi-carrusel">
+
+<div class="slide activo">Bienvenido al Proyecto</div>
+<div class="slide">Componentes con JavaScript</div>
+<div class="slide">Consumo de API y DOM</div>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+LISTA DE TAREAS
+================================ -->
+
+<section>
+
+<h2>Lista de Tareas</h2>
+
+<input type="text" id="nuevaTarea" placeholder="Escribe una tarea...">
+
+<button id="btnAgregar">Agregar</button>
+
+<ul id="listaTareas"></ul>
+
+</section>
+
+
+<!-- ===============================
+DASHBOARD USUARIOS
+================================ -->
+
+<section>
+
+<h2>Usuarios desde API</h2>
+
+<input type="search" id="busqueda" placeholder="Buscar usuario...">
+
+<button id="btnCargar">Cargar Usuarios</button>
+
+<div id="spinner" hidden>
+⏳ Cargando datos...
+</div>
+
+<section id="contenedor-usuarios"></section>
+
+</section>
+
+
+<!-- ===============================
+TABS
+================================ -->
+
+<section>
+
+<h2>Pestañas</h2>
+
+<div class="tabs-container">
+
+<div class="tabs">
+
+<button data-tab="info">Información</button>
+<button data-tab="tec">Tecnologías</button>
+
+</div>
+
+<div class="panel activo" data-panel="info">
+
+Este proyecto integra múltiples componentes de interfaz utilizando JavaScript.
+
+</div>
+
+<div class="panel" data-panel="tec">
+
+HTML, CSS, JavaScript, Fetch API, LocalStorage y manipulación del DOM.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+ACORDEON
+================================ -->
+
+<section>
+
+<h2>Acordeón</h2>
+
+<div class="mi-acordeon">
+
+<div class="acordeon-item">
+
+<div class="acordeon-header">
+
+¿Qué es el DOM?
+
+</div>
+
+<div class="acordeon-cuerpo">
+
+El DOM permite manipular los elementos HTML usando JavaScript.
+
+</div>
+
+</div>
+
+<div class="acordeon-item">
+
+<div class="acordeon-header">
+
+¿Qué es una API?
+
+</div>
+
+<div class="acordeon-cuerpo">
+
+Una API permite obtener información desde servidores externos.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ===============================
+MODAL
+================================ -->
+
+<section>
+
+<h2>Modal</h2>
+
+<button
+data-modal
+data-titulo="Información"
+data-contenido="Este es un ejemplo de ventana modal reutilizable">
+Abrir Modal
+</button>
+
+</section>
+
+
+<div id="modal-principal" class="modal">
+
+<div class="modal-overlay"></div>
+
+<div class="modal-contenido">
+
+<button class="modal-cerrar">✕</button>
+
+<h2 class="modal-titulo"></h2>
+
+<div class="modal-cuerpo"></div>
+
+</div>
+
+</div>
+
+
+<!-- Scripts -->
+
+<script src="js/app.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/acordeon.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/carrusel.js"></script>
+
+</body>
+</html>
