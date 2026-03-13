@@ -142,7 +142,7 @@ El dashboard obtiene datos desde una API pública para pruebas de desarrollo.
 Ejemplo de endpoint:
 
 ```
-https://dummyjson.com/users
+https://jsonplaceholder.typicode.com
 ```
 
 Esta API proporciona datos de usuarios como:
@@ -168,5 +168,5 @@ El objetivo de esta práctica es aplicar conceptos como:
 ---
 
 # Autor
-
+Jose Maria Gutierrez Gutierrez
 Práctica desarrollada como parte de una actividad académica de programación web.
