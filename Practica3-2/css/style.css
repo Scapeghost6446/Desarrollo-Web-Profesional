@@ -1,0 +1,598 @@
+:root{
+
+--color-primario:#3A86FF;
+--color-secundario:#8338EC;
+--color-acento:#FFBE0B;
+
+--color-fondo:#F4F6FB;
+--color-tarjeta:#FFFFFF;
+--color-texto:#2B2B2B;
+
+}
+
+/* ========================
+   BODY
+======================== */
+
+body{
+
+font-family:Segoe UI, Arial;
+
+background:var(--color-fondo);
+
+color:var(--color-texto);
+
+margin:0;
+
+display:flex;
+justify-content:center;
+
+animation:fadeIn 1s ease;
+
+}
+
+main{
+
+width:900px;
+
+padding:40px;
+
+}
+
+/* ========================
+   TITULOS
+======================== */
+
+h1{
+
+text-align:center;
+
+color:var(--color-primario);
+
+margin-bottom:30px;
+
+animation:slideDown .8s ease;
+
+}
+
+h2{
+
+margin-top:20px;
+
+}
+
+/* ========================
+   BOTONES
+======================== */
+
+button{
+
+padding:8px 14px;
+
+border:none;
+border-radius:6px;
+
+background:var(--color-primario);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:var(--color-secundario);
+
+transform:translateY(-2px);
+
+}
+
+/* ========================
+   INPUT
+======================== */
+
+input{
+
+padding:8px;
+
+border-radius:6px;
+border:1px solid #ccc;
+
+margin-right:5px;
+
+}
+
+/* ========================
+   TABS
+======================== */
+
+.tabs-container button{
+
+margin-right:5px;
+
+}
+
+.tabs-container button.activo{
+
+background:var(--color-secundario);
+
+}
+
+[data-panel]{
+
+display:none;
+
+margin-top:20px;
+
+animation:fadeIn .5s ease;
+
+}
+
+[data-panel].activo{
+
+display:block;
+
+}
+
+/* ========================
+   LISTA DE TAREAS
+======================== */
+
+ul{
+
+margin-top:10px;
+
+padding:0;
+
+}
+
+li{
+
+list-style:none;
+
+padding:10px;
+
+margin:6px 0;
+
+background:var(--color-tarjeta);
+
+border-radius:6px;
+
+box-shadow:0 2px 6px rgba(0,0,0,.08);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+animation:slideUp .4s ease;
+
+}
+
+li:hover{
+
+transform:scale(1.02);
+
+}
+
+.completada span{
+
+text-decoration:line-through;
+
+opacity:.6;
+
+}
+
+/* ========================
+   ACORDEON
+======================== */
+
+.mi-acordeon{
+
+margin-top:20px;
+
+display:flex;
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.acordeon-item{
+
+background:var(--color-tarjeta);
+
+border-radius:10px;
+
+box-shadow:0 4px 12px rgba(0,0,0,.1);
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+.acordeon-item:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 16px rgba(0,0,0,.15);
+
+}
+
+.acordeon-header{
+
+background:linear-gradient(
+135deg,
+var(--color-primario),
+var(--color-secundario)
+);
+
+color:white;
+
+padding:14px;
+
+font-weight:600;
+
+cursor:pointer;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.acordeon-header::after{
+
+content:"+";
+
+font-size:20px;
+
+transition:.3s;
+
+}
+
+.acordeon-item.abierto .acordeon-header::after{
+
+content:"−";
+
+}
+
+.acordeon-cuerpo{
+
+background:white;
+
+padding:0 14px;
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .4s ease, padding .3s;
+
+}
+
+.acordeon-item.abierto .acordeon-cuerpo{
+
+max-height:200px;
+
+padding:14px;
+
+animation:fadeIn .4s ease;
+
+}
+
+/* ========================
+   CARRUSEL
+======================== */
+
+.mi-carrusel{
+
+position:relative;
+
+margin-top:20px;
+
+}
+
+.slide{
+
+display:none;
+
+padding:60px;
+
+text-align:center;
+
+background:linear-gradient(
+135deg,
+var(--color-primario),
+var(--color-secundario)
+);
+
+color:white;
+
+border-radius:10px;
+
+font-size:22px;
+
+animation:fadeIn 1s ease;
+
+}
+
+.slide.activo{
+
+display:block;
+
+}
+
+/* ========================
+   TARJETAS USUARIOS
+======================== */
+
+.tarjeta-usuario{
+
+background:var(--color-tarjeta);
+
+padding:15px;
+
+margin:12px;
+
+border-radius:10px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+
+transition:.3s;
+
+animation:fadeIn .6s ease;
+
+}
+
+.tarjeta-usuario:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 6px 16px rgba(0,0,0,.2);
+
+}
+
+/* ========================
+   SPINNER
+======================== */
+
+#spinner{
+
+margin-top:10px;
+
+font-weight:bold;
+
+animation:blink 1s infinite;
+
+}
+
+/* ========================
+   MODAL
+======================== */
+
+.modal{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:none;
+
+align-items:center;
+justify-content:center;
+
+z-index:1000;
+
+}
+
+.modal.visible{
+
+display:flex;
+
+animation:fadeIn .3s ease;
+
+}
+
+.modal-overlay{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(4px);
+
+}
+
+.modal-contenido{
+
+position:relative;
+
+background:white;
+
+padding:30px;
+
+width:360px;
+
+border-radius:14px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.25);
+
+animation:modalZoom .35s ease;
+
+text-align:center;
+
+}
+
+.modal-titulo{
+
+font-size:20px;
+
+color:var(--color-primario);
+
+margin-bottom:10px;
+
+}
+
+.modal-cuerpo{
+
+font-size:14px;
+
+line-height:1.6;
+
+margin-bottom:20px;
+
+color:#444;
+
+}
+
+.modal-footer{
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+}
+
+.modal-cerrar{
+
+position:absolute;
+
+top:10px;
+right:14px;
+
+background:none;
+
+border:none;
+
+font-size:20px;
+
+cursor:pointer;
+
+color:#777;
+
+transition:.25s;
+
+}
+
+.modal-cerrar:hover{
+
+color:#ff4d4d;
+
+transform:scale(1.2);
+
+}
+
+.btn-modal{
+
+background:var(--color-primario);
+
+border:none;
+
+padding:8px 16px;
+
+border-radius:6px;
+
+color:white;
+
+font-size:14px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn-modal:hover{
+
+background:var(--color-secundario);
+
+transform:translateY(-2px);
+
+}
+
+/* ========================
+   ANIMACIONES
+======================== */
+
+@keyframes fadeIn{
+
+from{opacity:0;}
+
+to{opacity:1;}
+
+}
+
+@keyframes slideDown{
+
+from{
+
+transform:translateY(-30px);
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+}
+
+@keyframes slideUp{
+
+from{
+
+transform:translateY(20px);
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+}
+
+@keyframes modalZoom{
+
+from{
+
+transform:scale(.75);
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
+
+@keyframes blink{
+
+0%{opacity:.3;}
+50%{opacity:1;}
+100%{opacity:.3;}
+
+}
