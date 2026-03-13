@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<title>Proyecto DOM</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<h1>Proyecto JavaScript DOM</h1>
+
+<!-- TABS -->
+<div class="tabs-container">
+
+<button data-tab="tareas">Tareas</button>
+<button data-tab="acordeon">Acordeón</button>
+<button data-tab="carrusel">Carrusel</button>
+<button data-tab="usuarios">Usuarios</button>
+
+<!-- PANEL TAREAS -->
+<div data-panel="tareas">
+
+<h2 id="titulo">Mi Lista de Tareas</h2>
+
+<input id="nuevaTarea" placeholder="Nueva tarea">
+<button id="btnAgregar">Agregar</button>
+
+<ul id="listaTareas"></ul>
+
+</div>
+
+<!-- PANEL ACORDEON -->
+<div data-panel="acordeon">
+
+<h2>Acordeón</h2>
+
+<div class="mi-acordeon">
+
+<div class="acordeon-item">
+<div class="acordeon-header">Sección 1</div>
+<div class="acordeon-cuerpo">Contenido de la sección 1</div>
+</div>
+
+<div class="acordeon-item">
+<div class="acordeon-header">Sección 2</div>
+<div class="acordeon-cuerpo">Contenido de la sección 2</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- PANEL CARRUSEL -->
+<div data-panel="carrusel">
+
+<h2>Carrusel</h2>
+
+<div class="mi-carrusel">
+
+<div class="slide activo">Slide 1</div>
+<div class="slide">Slide 2</div>
+<div class="slide">Slide 3</div>
+
+</div>
+
+</div>
+
+<!-- PANEL USUARIOS -->
+<div data-panel="usuarios">
+
+<h2>Dashboard Usuarios</h2>
+
+<input type="search" id="busqueda" placeholder="Buscar usuario">
+
+<button id="btnCargar">
+Cargar Usuarios
+</button>
+
+<div id="spinner" hidden>
+Cargando...
+</div>
+
+<div id="estado"></div>
+
+<section id="contenedor-usuarios"></section>
+
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal-principal" class="modal">
+
+  <div class="modal-overlay"></div>
+
+  <div class="modal-contenido">
+
+    <button class="modal-cerrar">✕</button>
+
+    <h3 class="modal-titulo">Título del Modal</h3>
+
+    <div class="modal-cuerpo">
+      <p>
+        Este es el contenido del modal. Aquí puedes colocar
+        información, formularios o mensajes importantes.
+      </p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-modal">Aceptar</button>
+    </div>
+
+  </div>
+
+</div>
+
+
+</div>
+
+<button
+class="btn-abrir-modal"
+data-modal
+data-titulo="Información"
+data-contenido="Este es un modal de ejemplo con bastante información para demostrar que el botón no se estira aunque el contenido sea largo."
+>
+Abrir información
+</button>
+
+<script src="main.js"></script>
+
+</body>
+</html>
